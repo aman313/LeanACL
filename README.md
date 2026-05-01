@@ -185,3 +185,7 @@ lake exe leanacl_verify fixtures/leanacl_bridge/allowed_sensitive_manager.json /
 
 - Full JSON contract: [LeanACL/bridge_schema.md](LeanACL/bridge_schema.md).
 - Library entrypoint imports: [LeanACL.lean](LeanACL.lean).
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
