@@ -1,0 +1,24 @@
+{
+  "prompts": [
+    {
+      "id": "same-org-sensitive-manager-delete",
+      "prompt": "Task: decide whether the requested access should be allowed under the LeanACL policy, and provide the scenario facts used for that decision. Organizations: Acme orgId=1, WidgetsCo orgId=2. Scenario: user 101 is a manager in Acme. The resource is sensitive data owned by Acme. Requested permission is delete. Use trace_id \"prompt-sensitive-manager-delete\" and prompt_version \"input-prompts-v1\". Set llm_model to the model name you are using, or \"openai\" if unavailable."
+    },
+    {
+      "id": "same-org-sensitive-developer-read-denied",
+      "prompt": "Task: decide whether the requested access should be allowed under the LeanACL policy, and provide the scenario facts used for that decision. Organizations: Acme orgId=1, WidgetsCo orgId=2. Scenario: user 102 is a developer in Acme. The resource is sensitive data owned by Acme. Requested permission is read. Use trace_id \"prompt-sensitive-developer-read\" and prompt_version \"input-prompts-v1\". Set llm_model to the model name you are using, or \"openai\" if unavailable."
+    },
+    {
+      "id": "cross-org-manager-edit-denied",
+      "prompt": "Task: decide whether the requested access should be allowed under the LeanACL policy, and provide the scenario facts used for that decision. Organizations: Acme orgId=1, WidgetsCo orgId=2. Scenario: user 103 is a manager in WidgetsCo only. The resource is non-sensitive data owned by Acme. Requested permission is edit. Use trace_id \"prompt-cross-org-manager-edit\" and prompt_version \"input-prompts-v1\". Set llm_model to the model name you are using, or \"openai\" if unavailable."
+    },
+    {
+      "id": "same-org-devops-compute-delete",
+      "prompt": "Task: decide whether the requested access should be allowed under the LeanACL policy, and provide the scenario facts used for that decision. Organizations: Acme orgId=1, WidgetsCo orgId=2. Scenario: user 104 is devops in Acme. The resource is compute owned by Acme and has sensitivity=true even though it is not data. Requested permission is delete. Use trace_id \"prompt-devops-compute-delete\" and prompt_version \"input-prompts-v1\". Set llm_model to the model name you are using, or \"openai\" if unavailable."
+    },
+    {
+      "id": "multi-role-sensitive-cross-org-read-denied",
+      "prompt": "Task: decide whether the requested access should be allowed under the LeanACL policy, and provide the scenario facts used for that decision. Organizations: Acme orgId=1, WidgetsCo orgId=2, Globex orgId=3. Scenario: user 105 is a manager in WidgetsCo and a developer in Globex, but has no Acme membership. The resource is sensitive data owned by Acme. Requested permission is read. Use trace_id \"prompt-multirole-sensitive-cross-org\" and prompt_version \"input-prompts-v1\". Set llm_model to the model name you are using, or \"openai\" if unavailable."
+    }
+  ]
+}

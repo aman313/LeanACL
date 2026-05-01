@@ -1,0 +1,18 @@
+name = "LeanACL"
+version = "0.1.0"
+defaultTargets = ["LeanACL"]
+
+[leanOptions]
+pp.unicode.fun = true
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+rev = "v4.29.0"
+
+[[lean_lib]]
+name = "LeanACL"
+
+[[lean_exe]]
+name = "leanacl_verify"
+root = "LeanACL.Verify"

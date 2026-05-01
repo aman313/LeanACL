@@ -1,0 +1,19 @@
+{
+  "llm_allowed": true,
+  "permission": "write",
+  "resource": {
+    "owner_org": 1,
+    "resource_type": "storage",
+    "sensitivity": false
+  },
+  "trace_id": "alias-prediction",
+  "user": {
+    "id": 8,
+    "memberships": [
+      {
+        "org_id": 1,
+        "role": "dev_ops"
+      }
+    ]
+  }
+}

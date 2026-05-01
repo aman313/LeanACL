@@ -1,0 +1,21 @@
+{
+  "llm_allowed": true,
+  "llm_model": "fixture",
+  "prompt_version": "golden-v1",
+  "requested_permission": "read",
+  "resource": {
+    "ownerOrg": 1,
+    "resourcetype": "data",
+    "sensitivity": true
+  },
+  "trace_id": "wrong-sensitive-developer",
+  "user": {
+    "id": 2,
+    "memberships": [
+      {
+        "orgId": 1,
+        "role": "developer"
+      }
+    ]
+  }
+}
