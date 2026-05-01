@@ -10,7 +10,7 @@ If you only care about the proofs and policy, use the Lean library and `lake bui
 
 ---
 
-# Origin
+## Origin
 This project was built during the **LeanLang for Verified
 Autonomy Hackathon** (April 17–18 + online through May 1,
 2026) at the **Indian Institute of Science (IISc),
@@ -197,3 +197,22 @@ lake exe leanacl_verify fixtures/leanacl_bridge/allowed_sensitive_manager.json /
 
 - Full JSON contract: [LeanACL/bridge_schema.md](LeanACL/bridge_schema.md).
 - Library entrypoint imports: [LeanACL.lean](LeanACL.lean).
+
+## Acknowledgments
+This project was made possible by:
+
+Emergence AI — Hackathon sponsor
+Emergence India Labs — Event organizer and
+research direction
+
+Indian Institute of Science (IISc), Bangalore —
+Academic partner, hackathon co-design, tutorials,
+and mentorship
+
+## Links
+Hackathon Page 
+
+Emergence India Labs
+
+Emergence AI
+
