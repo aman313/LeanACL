@@ -10,7 +10,7 @@ If you only care about the proofs and policy, use the Lean library and `lake bui
 
 ---
 
-Origin
+# Origin
 This project was built during the **LeanLang for Verified
 Autonomy Hackathon** (April 17–18 + online through May 1,
 2026) at the **Indian Institute of Science (IISc),
