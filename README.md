@@ -10,6 +10,18 @@ If you only care about the proofs and policy, use the Lean library and `lake bui
 
 ---
 
+Origin
+This project was built during the **LeanLang for Verified
+Autonomy Hackathon** (April 17–18 + online through May 1,
+2026) at the **Indian Institute of Science (IISc),
+Bangalore**.
+Sponsored by Emergence AI
+Organized by **[Emergence India Labs]
+(https://east.emergence.ai)** in collaboration with
+IISc Bangalore.
+
+---
+
 ## Problem setup (LLM ↔ Lean)
 
 **Goal:** Treat LeanACL as ground truth and measure whether an LLM’s allow/deny prediction matches it.
