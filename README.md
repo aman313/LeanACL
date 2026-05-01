@@ -3,7 +3,6 @@
 This repository does two related things:
 
 1. **LeanACL (the Lean library)** — a formal model of an organization-scoped access-control policy: users with per-org roles, resources (`storage` / `compute` / `data`), optional sensitivity on `data`, and permissions `read` ≤ `edit` ≤ `delete`. The executable policy is `grant`; permitted access is `Can`. Theorems in `LeanACL/Theorems.lean` state security properties (e.g. sensitive-data lockdown, cross-org edit denial).
-
 2. **LLM evaluation harness (Python + `leanacl_verify`)** — a small workflow to test whether a **large language model** can **predict allow/deny** for a scenario **consistently with Lean**. The LLM must output structured JSON that includes both its **prediction** (`llm_allowed`) and the **scenario facts** (`user`, `resource`, `requested_permission`). **Lean does not trust the LLM**: it recomputes access from those facts and checks whether `llm_allowed` matches the formal decision.
 
 If you only care about the proofs and policy, use the Lean library and `lake build LeanACL`. If you care about **model vs. spec alignment**, use the bridge and fixtures below.
@@ -114,10 +113,12 @@ lake build leanacl_verify
 
 ## Build targets
 
-| Command | What it does |
-|---------|----------------|
-| `lake build LeanACL` | Builds the `LeanACL` library (terms, policy, theorems, examples). |
-| `lake build leanacl_verify` | Builds the JSON verifier executable. |
+
+| Command                     | What it does                                                      |
+| --------------------------- | ----------------------------------------------------------------- |
+| `lake build LeanACL`        | Builds the `LeanACL` library (terms, policy, theorems, examples). |
+| `lake build leanacl_verify` | Builds the JSON verifier executable.                              |
+
 
 ## Python bridge
 
@@ -125,12 +126,14 @@ The script calls OpenAI (HTTPS, stdlib `urllib`) unless you use the offline stub
 
 ### Environment variables
 
-| Variable | Required? | Purpose |
-|----------|------------|---------|
-| `OPENAI_API_KEY` | Yes for live LLM | Bearer token for OpenAI Chat Completions. |
-| `OPENAI_BASE_URL` | No | API base URL; default `https://api.openai.com/v1`. |
-| `OPENAI_MODEL` or `LEANACL_OPENAI_MODEL` | No | Model name; default `gpt-4o-mini`. |
-| `LEANACL_BRIDGE_LLM_STUB_JSON` | No | Path to a fixed prediction JSON file; when set, skips the network and returns that file for every prompt (tests / CI). |
+
+| Variable                                 | Required?        | Purpose                                                                                                                |
+| ---------------------------------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `OPENAI_API_KEY`                         | Yes for live LLM | Bearer token for OpenAI Chat Completions.                                                                              |
+| `OPENAI_BASE_URL`                        | No               | API base URL; default `https://api.openai.com/v1`.                                                                     |
+| `OPENAI_MODEL` or `LEANACL_OPENAI_MODEL` | No               | Model name; default `gpt-4o-mini`.                                                                                     |
+| `LEANACL_BRIDGE_LLM_STUB_JSON`           | No               | Path to a fixed prediction JSON file; when set, skips the network and returns that file for every prompt (tests / CI). |
+
 
 ### Verify one prediction JSON file
 
@@ -186,6 +189,3 @@ lake exe leanacl_verify fixtures/leanacl_bridge/allowed_sensitive_manager.json /
 - Full JSON contract: [LeanACL/bridge_schema.md](LeanACL/bridge_schema.md).
 - Library entrypoint imports: [LeanACL.lean](LeanACL.lean).
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
