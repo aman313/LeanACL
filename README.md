@@ -8,6 +8,17 @@ This repository does two related things:
 If you only care about the proofs and policy, use the Lean library and `lake build LeanACL`. If you care about **model vs. spec alignment**, use the bridge and fixtures below.
 
 ---
+## Origin
+This project was built during the **LeanLang for Verified
+Autonomy Hackathon** (April 17–18 + online through May 1,
+2026) at the **Indian Institute of Science (IISc),
+Bangalore**.
+Sponsored by Emergence AI
+Organized by **[Emergence India Labs]
+(https://east.emergence.ai)** in collaboration with
+IISc Bangalore.
+
+---
 
 ## Problem setup (LLM ↔ Lean)
 
@@ -188,4 +199,20 @@ lake exe leanacl_verify fixtures/leanacl_bridge/allowed_sensitive_manager.json /
 
 - Full JSON contract: [LeanACL/bridge_schema.md](LeanACL/bridge_schema.md).
 - Library entrypoint imports: [LeanACL.lean](LeanACL.lean).
+
+## Acknowledgments
+This project was made possible by:
+
+Emergence AI — Hackathon sponsor
+Emergence India Labs — Event organizer and
+research direction
+
+Indian Institute of Science (IISc), Bangalore —
+Academic partner, hackathon co-design, tutorials,
+and mentorship
+
+## Links
+Hackathon Page (https://east.emergence.ai/hackathon-april2026.html)
+Emergence India Labs (https://east.emergence.ai/)
+Emergence AI (https://www.emergence.ai/)
 
